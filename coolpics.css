@@ -1,0 +1,130 @@
+@import url("https://fonts.googleapis.com/css2?family=family=Mooli&display=swap");
+:root {
+--primary-color: #52489c;
+--secondary-color: #59c3c3;
+--accent-color: #f45b69;
+--text-dark: #333;
+--text-light: #ebebeb;
+--primary-font: Arial, Helvetica,sans-serif;
+--secondary-font: Mooli, san-serif;
+}@import url("https://fonts.googleapis.com/css2?family=Mooli&display=swap");
+
+body{
+    font-family: var(--primary-font);
+    font-size: 1.2em;
+    margin: 0;
+}
+
+header, footer{
+    background-color: #52479d;
+    color: white;
+    flex: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.menu-items{
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+    justify-content: space-between;
+    text-align: center;
+}
+
+h2{
+    padding: 20px;
+    width: max-content;
+    margin: auto;
+}
+.gallery{
+    display: grid;
+    grid-template-columns: 1fr;
+    width: max-content;
+    margin: auto;
+    
+}
+
+p {
+    margin: auto;
+    padding-left: 30px;
+    max-width: 1200px;
+}
+
+h1{
+    margin: 0;
+    font-weight: 500;
+    padding-bottom: 20px;
+    padding-left: 60px;
+    padding-right: 60px;
+    text-align: center;
+    font-size: 60px;
+}
+
+button{
+    font-size: 25px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    margin: auto;
+}
+
+img{
+    max-width: 100%;
+    width: 250px;
+    height: 250px;
+    object-fit: cover;
+    border-style: solid;
+    border-color: white;
+    border-width: 15px;
+    box-shadow: 4px 4px 8px black;
+}
+
+a{
+    text-decoration: underline;
+    padding: 5px;
+    color: white;
+}
+a:link,
+a:visited {
+  /* color: var(--accent-color); */
+}
+
+@media screen and (min-width:700px) {
+    .gallery{
+        grid-template-columns: 1fr 1fr;
+        column-gap: 35px;
+    }
+    a{
+        display: none;
+    }
+}
+
+@media screen and (min-width:1000px) {
+    .gallery{
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 0px;
+    }
+    button{
+        display: none;
+    }
+
+    a{
+        display: inline;
+    }
+
+    .menu-items{
+        display: flex;
+        max-width: 1200px;
+        width: 100%;
+        flex-direction: row;
+        padding-bottom: 10px;
+        justify-content: space-between;
+    }
+}
