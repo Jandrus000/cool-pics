@@ -34,10 +34,8 @@ function viewerTemplate(pic, alt){
 
 function viewHandler(event) {
     const galleryItem = event.target;
-
-    let srcName = galleryItem.src.split("-")[0];
+    let srcName = galleryItem.getAttribute('src').split("-")[0];
     srcName = srcName + "-full.jpeg"
-    console.log(srcName)
 	document.body.insertAdjacentHTML("afterbegin", viewerTemplate(srcName, galleryItem.alt))
 
 	// add a listener to the close button (X) that calls a function called closeViewer when clicked
