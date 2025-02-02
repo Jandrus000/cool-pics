@@ -38,6 +38,10 @@ header{
     text-align: center;
 }
 
+.hide {
+    display: none;
+}
+
 h2{
     padding: 20px;
     width: max-content;
@@ -67,7 +71,7 @@ h1{
     font-size: 60px;
 }
 
-button{
+#menu-button{
     font-size: 25px;
     background-color: transparent;
     border: none;
@@ -75,8 +79,7 @@ button{
     margin: auto;
 }
 
-img{
-    max-width: 100%;
+.gallery img{
     width: 250px;
     height: 250px;
     object-fit: cover;
@@ -84,6 +87,34 @@ img{
     border-color: white;
     border-width: 15px;
     box-shadow: 4px 4px 8px black;
+}
+
+.viewer{
+    position: fixed;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: grid;
+    padding: 20px;
+    width: fit-content;
+    margin: auto;
+}
+
+.viewer img{
+  max-width:100%;
+  max-height: 100vh;
+  object-fit: contain;
+}
+
+.close-viewer {
+    background-color: transparent;
+    color: white;
+    justify-self: end;
+    align-self: end;
+    border: none;
+    font-size: 25px;
 }
 
 a{
@@ -100,17 +131,22 @@ a:visited {
     .gallery{
         grid-template-columns: 1fr 1fr;
     }
-    a{
-        display: none;
+
+    .menu-items{
+        max-width: 100%;
+        flex-direction: row;
+        gap: 10px;
+        justify-content: space-between;
     }
 }
 
 @media screen and (min-width:1000px) {
     .gallery{
+        max-width: 100%;
         grid-template-columns: 1fr 1fr 1fr;
         column-gap: 0px;
     }
-    button{
+    #menu-button{
         display: none;
     }
 
@@ -125,5 +161,12 @@ a:visited {
         flex-direction: row;
         padding-bottom: 10px;
         justify-content: space-between;
+    }
+    .viewer img{
+        max-height: 80vh;
+    }
+    .viewer{
+        padding:60px;
+        height: fit-content;
     }
 }
